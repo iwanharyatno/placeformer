@@ -8,6 +8,9 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity.y += gravity * delta
 	
+	# direction itu 1: gerak ke kanan
+	# direction itu -1: gerak ke kiri
+	# direction itu 0: diam
 	var direction = Input.get_axis("ui_left", "ui_right")
 	velocity.x = direction * speed
 	
@@ -16,7 +19,12 @@ func _physics_process(delta: float) -> void:
 	elif direction < 0:
 		$AnimatedSprite2D.flip_h = true
 		
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = -jump_force
+	
+	if direction != 0:
+		$AnimatedSprite2D.play("run")
+	else:
+		$AnimatedSprite2D.play("default")
 	
 	move_and_slide()
