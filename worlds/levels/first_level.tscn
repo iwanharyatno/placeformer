@@ -1,8 +1,15 @@
-[gd_scene load_steps=4 format=4 uid="uid://bnlle4b14sck0"]
+[gd_scene load_steps=8 format=4 uid="uid://bnlle4b14sck0"]
 
 [ext_resource type="PackedScene" uid="uid://08rqv5a6rpt8" path="res://entity/player.tscn" id="1_8n55n"]
 [ext_resource type="PackedScene" uid="uid://dmoumm2ujx0ns" path="res://entity/blocks.tscn" id="2_ditwu"]
 [ext_resource type="PackedScene" uid="uid://qlbyicj7g0qj" path="res://entity/coin.tscn" id="3_s5epp"]
+[ext_resource type="PackedScene" uid="uid://cptreh1iw2q1a" path="res://entity/kill_zone.tscn" id="4_gdy33"]
+[ext_resource type="PackedScene" uid="uid://cij6taxp666v3" path="res://entity/platform.tscn" id="5_btgev"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_gdy33"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_btgev"]
+size = Vector2(80, 46)
 
 [node name="FirstLevel" type="Node2D"]
 
@@ -28,3 +35,29 @@ position = Vector2(720, 302)
 
 [node name="Coin4" parent="." instance=ExtResource("3_s5epp")]
 position = Vector2(735, 302)
+
+[node name="KillZone" parent="." instance=ExtResource("4_gdy33")]
+position = Vector2(1196, 509)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
+position = Vector2(264, -53)
+shape = SubResource("WorldBoundaryShape2D_gdy33")
+
+[node name="KillZone2" parent="." instance=ExtResource("4_gdy33")]
+position = Vector2(811, 333)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone2"]
+position = Vector2(37, 21)
+shape = SubResource("RectangleShape2D_btgev")
+
+[node name="Platform" parent="." instance=ExtResource("5_btgev")]
+position = Vector2(601, 301)
+
+[node name="Platform2" parent="." instance=ExtResource("5_btgev")]
+position = Vector2(382, 277)
+
+[node name="Platform3" parent="." instance=ExtResource("5_btgev")]
+position = Vector2(847, 298)
+
+[node name="Platform4" parent="." instance=ExtResource("5_btgev")]
+position = Vector2(993, 308)
