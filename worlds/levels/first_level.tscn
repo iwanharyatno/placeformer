@@ -1,15 +1,54 @@
-[gd_scene load_steps=8 format=4 uid="uid://bnlle4b14sck0"]
+[gd_scene load_steps=12 format=4 uid="uid://bnlle4b14sck0"]
 
 [ext_resource type="PackedScene" uid="uid://08rqv5a6rpt8" path="res://entity/player.tscn" id="1_8n55n"]
 [ext_resource type="PackedScene" uid="uid://dmoumm2ujx0ns" path="res://entity/blocks.tscn" id="2_ditwu"]
 [ext_resource type="PackedScene" uid="uid://qlbyicj7g0qj" path="res://entity/coin.tscn" id="3_s5epp"]
 [ext_resource type="PackedScene" uid="uid://cptreh1iw2q1a" path="res://entity/kill_zone.tscn" id="4_gdy33"]
 [ext_resource type="PackedScene" uid="uid://cij6taxp666v3" path="res://entity/platform.tscn" id="5_btgev"]
+[ext_resource type="PackedScene" uid="uid://cjr4aw7pdb40f" path="res://entity/slime.tscn" id="6_pouf4"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_gdy33"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_btgev"]
 size = Vector2(80, 46)
+
+[sub_resource type="Animation" id="Animation_btgev"]
+resource_name = "move"
+length = 4.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(993, 308), Vector2(1265, 308)]
+}
+
+[sub_resource type="Animation" id="Animation_pouf4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1265, 308)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3dp01"]
+_data = {
+&"RESET": SubResource("Animation_pouf4"),
+&"move": SubResource("Animation_btgev")
+}
 
 [node name="FirstLevel" type="Node2D"]
 
@@ -60,4 +99,13 @@ position = Vector2(382, 277)
 position = Vector2(847, 298)
 
 [node name="Platform4" parent="." instance=ExtResource("5_btgev")]
-position = Vector2(993, 308)
+position = Vector2(1265, 308)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platform4"]
+libraries = {
+&"": SubResource("AnimationLibrary_3dp01")
+}
+autoplay = "move"
+
+[node name="Slime" parent="." instance=ExtResource("6_pouf4")]
+position = Vector2(656, 334)
