@@ -61,3 +61,9 @@ shape = SubResource("RectangleShape2D_nphkc")
 [node name="MataKanan" type="RayCast2D" parent="."]
 position = Vector2(0, 6)
 target_position = Vector2(10, 0)
+collision_mask = 4
+
+[node name="MataKiri" type="RayCast2D" parent="."]
+position = Vector2(0, 6)
+target_position = Vector2(-10, 0)
+collision_mask = 4
