@@ -1,7 +1,14 @@
-[gd_scene format=3 uid="uid://n0cklmtqlvx8"]
+[gd_scene load_steps=3 format=3 uid="uid://n0cklmtqlvx8"]
+
+[ext_resource type="PackedScene" uid="uid://bnlle4b14sck0" path="res://worlds/levels/first_level.tscn" id="1_e2o6t"]
+[ext_resource type="PackedScene" uid="uid://33u0mgkv0qlw" path="res://screens/game_play.tscn" id="2_feb5d"]
 
 [node name="Game" type="Node2D"]
 
 [node name="World" type="Node2D" parent="."]
 
+[node name="FirstLevel" parent="World" instance=ExtResource("1_e2o6t")]
+
 [node name="GUI" type="CanvasLayer" parent="."]
+
+[node name="GamePlay" parent="GUI" instance=ExtResource("2_feb5d")]
