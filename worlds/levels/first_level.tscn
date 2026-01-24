@@ -7,13 +7,14 @@
 [ext_resource type="PackedScene" uid="uid://cij6taxp666v3" path="res://entity/platform.tscn" id="5_btgev"]
 [ext_resource type="PackedScene" uid="uid://cjr4aw7pdb40f" path="res://entity/slime.tscn" id="6_pouf4"]
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_gdy33"]
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_pouf4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_btgev"]
 size = Vector2(80, 46)
 
 [sub_resource type="Animation" id="Animation_pouf4"]
 length = 0.001
+loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -80,7 +81,7 @@ position = Vector2(1196, 509)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
 position = Vector2(264, -53)
-shape = SubResource("WorldBoundaryShape2D_gdy33")
+shape = SubResource("WorldBoundaryShape2D_pouf4")
 
 [node name="KillZone2" parent="." instance=ExtResource("4_gdy33")]
 position = Vector2(811, 333)

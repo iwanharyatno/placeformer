@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://glrv8so21foo"]
+
+[ext_resource type="FontFile" uid="uid://dbvi7y2mgy1rm" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="1_xi7s7"]
+[ext_resource type="Theme" uid="uid://bp1m1ytpxyms5" path="res://themes.tres" id="2_xtd6d"]
+
+[node name="Home" type="CanvasLayer"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 359.0
+offset_top = 223.0
+offset_right = 789.0
+offset_bottom = 263.0
+theme_override_fonts/font = ExtResource("1_xi7s7")
+theme_override_font_sizes/font_size = 40
+text = "Placeformer"
+
+[node name="Button" type="Button" parent="."]
+offset_left = 442.0
+offset_top = 316.0
+offset_right = 718.0
+offset_bottom = 372.0
+theme = ExtResource("2_xtd6d")
+theme_override_fonts/font = ExtResource("1_xi7s7")
+theme_override_font_sizes/font_size = 24
+text = "Start Now
+"

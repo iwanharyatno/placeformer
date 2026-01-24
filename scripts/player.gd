@@ -21,6 +21,7 @@ func _physics_process(delta: float) -> void:
 		
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = -jump_force
+		$AudioStreamPlayer.play()
 	
 	if direction != 0:
 		$AnimatedSprite2D.play("run")
