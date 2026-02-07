@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://glrv8so21foo"]
+[gd_scene load_steps=4 format=3 uid="uid://glrv8so21foo"]
 
+[ext_resource type="Script" uid="uid://b0lqxgbduhbe6" path="res://screens/home.gd" id="1_tbfvp"]
 [ext_resource type="FontFile" uid="uid://dbvi7y2mgy1rm" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="1_xi7s7"]
 [ext_resource type="Theme" uid="uid://bp1m1ytpxyms5" path="res://themes.tres" id="2_xtd6d"]
 
 [node name="Home" type="CanvasLayer"]
+script = ExtResource("1_tbfvp")
 
 [node name="Label" type="Label" parent="."]
 offset_left = 359.0
@@ -24,3 +26,5 @@ theme_override_fonts/font = ExtResource("1_xi7s7")
 theme_override_font_sizes/font_size = 24
 text = "Start Now
 "
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
