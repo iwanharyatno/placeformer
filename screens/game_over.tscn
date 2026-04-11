@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://j4u3ews0323q"]
+
+[ext_resource type="FontFile" uid="uid://dbvi7y2mgy1rm" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="1_skulm"]
+[ext_resource type="Theme" uid="uid://bp1m1ytpxyms5" path="res://themes.tres" id="2_x01cv"]
+
+[node name="GameOver" type="CanvasLayer"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 431.0
+offset_top = 189.0
+offset_right = 707.0
+offset_bottom = 221.0
+theme_override_fonts/font = ExtResource("1_skulm")
+theme_override_font_sizes/font_size = 32
+text = "Game Over"
+
+[node name="Button" type="Button" parent="."]
+offset_left = 487.0
+offset_top = 263.0
+offset_right = 656.0
+offset_bottom = 329.0
+theme = ExtResource("2_x01cv")
+theme_override_font_sizes/font_size = 24
+text = "Retry"
